@@ -42,7 +42,7 @@
 
       function sendPost(text){
           const bridge = vkBridge.default;
-          bridge.send("VKWebAppShowWallPostBox", {
+          vkBridge.send("VKWebAppShowWallPostBox", {
             "message": text
           });
       }
@@ -68,7 +68,7 @@
 
       function ShowLeaderBoardBox(value){
         const bridge = vkBridge.default;
-        bridge.send("VKWebAppShowLeaderBoardBox", {user_result:Number(value)})
+        vkBridge.send("VKWebAppShowLeaderBoardBox", {user_result:Number(value)})
          .then(data => console.log(data.success))
         .catch(error => console.log(error));
        
@@ -76,7 +76,7 @@
 
       function inviteFriend(){
         const bridge = vkBridge.default;
-        bridge.send("VKWebAppShowInviteBox", {})
+        vkBridge.send("VKWebAppShowInviteBox", {})
          .then(data => console.log(data.success))  
         .catch(error => console.log(error));
        
